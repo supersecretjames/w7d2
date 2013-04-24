@@ -1,0 +1,13 @@
+<div id="feed-bar"></div>
+<div id="content"></div>
+
+<script type="text/javascript">
+  $(function() {
+    var feeds = <%= Feed.all.to_json.html_safe %>
+    var entries = <%= Entry.all.to_json.html_safe %>
+
+    window.NR.initialize($('#feed-bar'),$('#content'), feeds, entries);
+
+
+  });
+</script>
